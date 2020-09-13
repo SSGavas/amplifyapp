@@ -2,6 +2,7 @@ type Note {
   id: ID!
   name: String!
   description: String
+  image: String
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
 }
@@ -93,6 +94,7 @@ input ModelNoteFilterInput {
   id: ModelIDInput
   name: ModelStringInput
   description: ModelStringInput
+  image: ModelStringInput
   and: [ModelNoteFilterInput]
   or: [ModelNoteFilterInput]
   not: ModelNoteFilterInput
@@ -120,12 +122,14 @@ input CreateNoteInput {
   id: ID
   name: String!
   description: String
+  image: String
 }
 
 input UpdateNoteInput {
   id: ID!
   name: String
   description: String
+  image: String
 }
 
 input DeleteNoteInput {
@@ -141,6 +145,7 @@ type Mutation {
 input ModelNoteConditionInput {
   name: ModelStringInput
   description: ModelStringInput
+  image: ModelStringInput
   and: [ModelNoteConditionInput]
   or: [ModelNoteConditionInput]
   not: ModelNoteConditionInput
